@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-vitepress",
+  "version": "0.0.1",
+  "generators": {
+    "nx-vitepress": {
+      "factory": "./src/generators/nx-vitepress/generator",
+      "schema": "./src/generators/nx-vitepress/schema.json",
+      "description": "nx-vitepress generator"
+    }
+  }
+}

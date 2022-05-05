@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "nx-vitepress": "packages/nx-vitepress",
+    "nx-vitepress-e2e": "e2e/nx-vitepress-e2e"
+  }
+}
