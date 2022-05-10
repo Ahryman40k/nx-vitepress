@@ -42,15 +42,15 @@ describe('nx-vitepress generator', () => {
     await generator(appTree, options);
 
     const config = readProjectConfiguration(appTree, 'my-app');
-    const { build, serve } = config.targets || {};
+    const { build, serve, dev } = config.targets || {};
 
     expect(config.root).toBe('apps/my-app');
-    expect(build.executor).toBe('@ahryman40k/nx-vitepress:build');
-    expect(build.options).toEqual({ outputPath: 'dist/apps/my-app' });
-    expect(serve.executor).toBe('@ahryman40k/nx-vitepress:serve');
-    expect(serve.options).toEqual({
-      port: 3000,
-    });
+    expect(build.executor).toBe('@nrwl/workspace:run-commands');
+    expect(build.options).toEqual({command: 'vitepress build apps/my-app'});
+    expect(serve.executor).toBe('@nrwl/workspace:run-commands');
+    expect(serve.options).toEqual({command: 'vitepress serve apps/my-app'});
+    expect(dev.executor).toBe('@nrwl/workspace:run-commands');
+    expect(dev.options).toEqual({command: 'vitepress dev apps/my-app'});
   });
 
   it('should generate files', async () => {
@@ -69,7 +69,7 @@ describe('nx-vitepress generator', () => {
       const { build } = config.targets || {};
 
       expect(config.root).toBe('apps/subdir/my-app');
-      expect(build.options).toEqual({ outputPath: 'dist/apps/subdir/my-app' });
+      expect(build.options).toEqual({command: 'vitepress build apps/subdir/my-app'});
 
       generatedFiles
         .map((file) => `apps/subdir/my-app/${file}`)
@@ -95,7 +95,7 @@ describe('nx-vitepress generator', () => {
 
       expect(config.root).toBe('custom-apps-dir/my-app');
       expect(build.options).toEqual({
-        outputPath: 'dist/custom-apps-dir/my-app',
+        command: 'vitepress build custom-apps-dir/my-app',
       });
 
       generatedFiles
