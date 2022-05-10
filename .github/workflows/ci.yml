@@ -1,0 +1,23 @@
+name: Nx integration
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v3
+      - run: npm ci
+      - run: npx nx workspace-lint
+      - run: npx nx format:check
+      - run: npx nx affected --target=test --parallel=3 --all --code-coverage
+      - run: npx nx affected --target=e2e --parallel=3 -all --code-coverage
+      - run: npx nx affected --target=build --parallel=3
+      
