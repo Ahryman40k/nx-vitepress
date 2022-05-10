@@ -29,3 +29,8 @@ the vitepress project declare 3 commands:
 - `nx build --project your_doc_project` to build your documentation project
 - `nx serve --project your_doc_project` to serve your documentation project
 - `nx dev --project your_doc_project`   to serve your documentation project for development purpose (hot reload, ...)
+
+
+The addin also support custom directory. 
+
+`nx g @ahryman40k/nx-vitepress:app --directory your_custom_dir`
