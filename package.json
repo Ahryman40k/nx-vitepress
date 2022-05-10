@@ -2,6 +2,14 @@
   "name": "ahryman40k",
   "version": "0.0.1",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/Ahryman40k/nx-vitepress.git"
+  },
+  "author": {
+    "email": "ahryman40k@protonmail.com",
+    "name": "ahryman40k",
+    "url": "https://www.linkedin.com/in/ahryman40k/"
+  },
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
