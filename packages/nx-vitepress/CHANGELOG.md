@@ -16,4 +16,11 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * initial commit ([e1ed575](https://github.com/Ahryman40k/nx-vitepress/commit/e1ed57569a4ef47cd25998676c3190235aad7c5d))
 
+## 0.1.0 (2022-05-10)
+
+
+### Features
+
+* initial commit ([e1ed575](https://github.com/Ahryman40k/nx-vitepress/commit/e1ed57569a4ef47cd25998676c3190235aad7c5d))
+
 ### 0.0.1 (2022-05-10)
