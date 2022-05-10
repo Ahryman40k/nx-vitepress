@@ -1,13 +1,16 @@
 {
   "name": "@ahryman40k/nx-vitepress",
-  "version": "0.2.0",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Vitepress adddin for Nx",
   "repository": {
     "type": "git",
     "url": "https://github.com/Ahryman40k/nx-vitepress.git"
   },
-  "keywords": ["vitepress", "nx"],
+  "keywords": [
+    "vitepress",
+    "nx"
+  ],
   "author": {
     "email": "ahryman40k@protonmail.com",
     "name": "ahryman40k",

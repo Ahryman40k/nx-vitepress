@@ -4,6 +4,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### [0.1.2](https://github.com/Ahryman40k/nx-vitepress/compare/nx-vitepress-0.1.1...nx-vitepress-0.1.2) (2022-05-10)
 
+### [0.1.2](https://github.com/Ahryman40k/nx-vitepress/compare/nx-vitepress-0.1.1...nx-vitepress-0.1.2) (2022-05-10)
+
 ## [0.2.0](https://github.com/Ahryman40k/nx-vitepress/compare/v0.1.0...v0.2.0) (2022-05-10)
 
 ## [0.1.0](https://github.com/Ahryman40k/nx-vitepress/compare/v0.0.2...v0.1.0) (2022-05-10)
