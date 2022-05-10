@@ -3,10 +3,10 @@
   "name": "nx-vitepress",
   "version": "0.0.1",
   "generators": {
-    "nx-vitepress": {
-      "factory": "./src/generators/nx-vitepress/generator",
-      "schema": "./src/generators/nx-vitepress/schema.json",
-      "description": "nx-vitepress generator"
+    "app": {
+      "factory": "./src/generators/app/generator",
+      "schema": "./src/generators/app/schema.json",
+      "description": "app generator"
     }
   }
 }

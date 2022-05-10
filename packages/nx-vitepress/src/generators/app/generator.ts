@@ -1,4 +1,5 @@
 import {
+  addDependenciesToPackageJson,
   addProjectConfiguration,
   formatFiles,
   generateFiles,
@@ -26,7 +27,7 @@ function normalizeOptions(
     ? `${names(options.directory).fileName}/${name}`
     : name;
   const projectName = projectDirectory.replace(new RegExp('/', 'g'), '-');
-  const projectRoot = `${getWorkspaceLayout(tree).libsDir}/${projectDirectory}`;
+  const projectRoot = `${getWorkspaceLayout(tree).appsDir}/${projectDirectory}`;
   const parsedTags = options.tags
     ? options.tags.split(',').map((s) => s.trim())
     : [];
@@ -62,15 +63,43 @@ export default async function (
   const normalizedOptions = normalizeOptions(tree, options);
   addProjectConfiguration(tree, normalizedOptions.projectName, {
     root: normalizedOptions.projectRoot,
-    projectType: 'library',
-    sourceRoot: `${normalizedOptions.projectRoot}/src`,
+    projectType: 'application',
     targets: {
       build: {
-        executor: '@ahryman40k/nx-vitepress:build',
+        executor: '@nrwl/workspace:run-commands',
+        outputs: ["{options.outputPath}"],
+        options: {
+          command: `vitepress build ${normalizedOptions.projectRoot}`
+        },
+      },
+      dev: {
+        executor: '@nrwl/workspace:run-commands',
+        options: {
+          command: `vitepress dev ${normalizedOptions.projectRoot}`
+        },
+      },
+      serve: {
+        executor: '@nrwl/workspace:run-commands',
+        options: {
+          command: `vitepress serve ${normalizedOptions.projectRoot}`
+        },
       },
     },
     tags: normalizedOptions.parsedTags,
   });
   addFiles(tree, normalizedOptions);
+  addDependenciesToPackageJson(
+    tree,
+    {
+      "@vue/theme": "^1.0.2",
+      "vitepress": "^0.22.3",
+      "vue": "^3.2.33"
+    },
+    {
+      "@types/node": "^17.0.31"
+    }
+  );
   await formatFiles(tree);
 }
+
+

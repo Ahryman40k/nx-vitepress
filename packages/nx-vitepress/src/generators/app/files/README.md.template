@@ -1,0 +1,18 @@
+# <%= name %> 
+
+Welcome to your newly generated vitepress project 
+
+- Build your project with
+```bash
+    nx build <%= name %>
+```
+
+- Serve your project with
+```bash
+    nx serve <%= name %>
+```
+
+- Run in development mode with
+```bash
+    nx dev <%= name %>
+```

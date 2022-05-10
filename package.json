@@ -1,6 +1,6 @@
 {
   "name": "ahryman40k",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
@@ -27,8 +27,7 @@
     "nx": "14.1.1",
     "prettier": "^2.5.1",
     "ts-jest": "27.1.4",
-    "ts-node": "9.1.1",
-    "tslib": "^2.0.0",
+    "ts-node": "^9.1.1",
     "typescript": "~4.6.2"
   },
   "dependencies": {
