@@ -8,6 +8,12 @@
         "target": "nx-vitepress:build",
         "jestConfig": "e2e/nx-vitepress-e2e/jest.config.ts"
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
     }
   },
   "tags": [],
