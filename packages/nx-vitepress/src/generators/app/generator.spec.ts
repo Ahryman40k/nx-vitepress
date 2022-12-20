@@ -1,9 +1,8 @@
-import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
+import { createTreeWithEmptyV1Workspace } from '@nrwl/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nrwl/devkit';
 
 import generator from './generator';
 import { NxVitepressGeneratorSchema } from './schema';
-
 
 const generatedFiles = [
   './tsconfig.json',
@@ -20,16 +19,15 @@ const generatedFiles = [
   './docs/about',
   './docs/about/index.md',
   './docs/guide',
-  './docs/guide/index.md'
+  './docs/guide/index.md',
 ];
-
 
 describe('nx-vitepress generator', () => {
   let appTree: Tree;
   const options: NxVitepressGeneratorSchema = { name: 'my-app' };
 
   beforeEach(() => {
-    appTree = createTreeWithEmptyWorkspace();
+    appTree = createTreeWithEmptyV1Workspace();
   });
 
   it('should run successfully', async () => {
@@ -46,11 +44,11 @@ describe('nx-vitepress generator', () => {
 
     expect(config.root).toBe('apps/my-app');
     expect(build.executor).toBe('@nrwl/workspace:run-commands');
-    expect(build.options).toEqual({command: 'vitepress build apps/my-app'});
+    expect(build.options).toEqual({ command: 'vitepress build apps/my-app' });
     expect(serve.executor).toBe('@nrwl/workspace:run-commands');
-    expect(serve.options).toEqual({command: 'vitepress serve apps/my-app'});
+    expect(serve.options).toEqual({ command: 'vitepress serve apps/my-app' });
     expect(dev.executor).toBe('@nrwl/workspace:run-commands');
-    expect(dev.options).toEqual({command: 'vitepress dev apps/my-app'});
+    expect(dev.options).toEqual({ command: 'vitepress dev apps/my-app' });
   });
 
   it('should generate files', async () => {
@@ -69,7 +67,9 @@ describe('nx-vitepress generator', () => {
       const { build } = config.targets || {};
 
       expect(config.root).toBe('apps/subdir/my-app');
-      expect(build.options).toEqual({command: 'vitepress build apps/subdir/my-app'});
+      expect(build.options).toEqual({
+        command: 'vitepress build apps/subdir/my-app',
+      });
 
       generatedFiles
         .map((file) => `apps/subdir/my-app/${file}`)
@@ -103,6 +103,4 @@ describe('nx-vitepress generator', () => {
         .forEach((path) => expect(appTree.exists(path)).toBeTruthy());
     });
   });
-
-
 });
