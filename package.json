@@ -1,8 +1,8 @@
 {
   "name": "ahryman40k",
-  "version": "0.0.2",
+  "version": "15.0.0",
   "license": "MIT",
-  "description": "Vitepress adddin for Nx",
+  "description": "Vitepress addin for Nx",
   "repository": {
     "type": "git",
     "url": "https://github.com/Ahryman40k/nx-vitepress.git"
@@ -17,9 +17,7 @@
     "url": "https://www.linkedin.com/in/ahryman40k/"
   },
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "postinstall": "husky install"
   },
   "private": true,
   "devDependencies": {

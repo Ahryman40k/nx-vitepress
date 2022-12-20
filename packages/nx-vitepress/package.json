@@ -1,6 +1,6 @@
 {
   "name": "@ahryman40k/nx-vitepress",
-  "version": "0.1.1",
+  "version": "15.0.0",
   "license": "MIT",
   "description": "Vitepress adddin for Nx",
   "repository": {
