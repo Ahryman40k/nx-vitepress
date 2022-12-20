@@ -17,7 +17,9 @@
     "url": "https://www.linkedin.com/in/ahryman40k/"
   },
   "scripts": {
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "build:all": "nx run-many --target=build --all",
+    "publish": "npm run build:all && npm publish dist/packages/nx-vitepress/"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
