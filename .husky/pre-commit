@@ -2,3 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npx nx format:write && npx nx format:check
+npx nx affected:build
+npx nx affected:test
