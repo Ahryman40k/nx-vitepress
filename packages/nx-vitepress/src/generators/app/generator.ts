@@ -91,12 +91,12 @@ export default async function (
   addDependenciesToPackageJson(
     tree,
     {
-      "@vue/theme": "^1.0.2",
-      "vitepress": "^0.22.3",
-      "vue": "^3.2.33"
+      "@vue/theme": "^1.3.0",
+      "vitepress": "^1.0.0-alpha.33",
+      "vue": "^3.2.45"
     },
     {
-      "@types/node": "^17.0.31"
+      "@types/node": "^18.11.17"
     }
   );
   await formatFiles(tree);
