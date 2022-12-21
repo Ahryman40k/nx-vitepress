@@ -67,21 +67,21 @@ export default async function (
     targets: {
       build: {
         executor: '@nrwl/workspace:run-commands',
-        outputs: ["{options.outputPath}"],
+        outputs: ['{options.outputPath}'],
         options: {
-          command: `vitepress build ${normalizedOptions.projectRoot}`
+          command: `vitepress build ${normalizedOptions.projectRoot}`,
         },
       },
       dev: {
         executor: '@nrwl/workspace:run-commands',
         options: {
-          command: `vitepress dev ${normalizedOptions.projectRoot}`
+          command: `vitepress dev ${normalizedOptions.projectRoot}`,
         },
       },
       serve: {
         executor: '@nrwl/workspace:run-commands',
         options: {
-          command: `vitepress serve ${normalizedOptions.projectRoot}`
+          command: `vitepress serve ${normalizedOptions.projectRoot}`,
         },
       },
     },
@@ -91,15 +91,13 @@ export default async function (
   addDependenciesToPackageJson(
     tree,
     {
-      "@vue/theme": "^1.3.0",
-      "vitepress": "^1.0.0-alpha.33",
-      "vue": "^3.2.45"
+      '@vue/theme': '^1.3.0',
+      vitepress: '^1.0.0-alpha.33',
+      vue: '^3.2.45',
     },
     {
-      "@types/node": "^18.11.17"
+      '@types/node': '^18.11.17',
     }
   );
   await formatFiles(tree);
 }
-
-
