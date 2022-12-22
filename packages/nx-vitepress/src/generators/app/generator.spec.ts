@@ -43,11 +43,11 @@ describe('nx-vitepress generator', () => {
     const { build, serve, dev } = config.targets || {};
 
     expect(config.root).toBe('apps/my-app');
-    expect(build.executor).toBe('@nrwl/workspace:run-commands');
+    expect(build.executor).toBe('nx:run-commands');
     expect(build.options).toEqual({ command: 'vitepress build apps/my-app' });
-    expect(serve.executor).toBe('@nrwl/workspace:run-commands');
+    expect(serve.executor).toBe('nx:run-commands');
     expect(serve.options).toEqual({ command: 'vitepress serve apps/my-app' });
-    expect(dev.executor).toBe('@nrwl/workspace:run-commands');
+    expect(dev.executor).toBe('nx:run-commands');
     expect(dev.options).toEqual({ command: 'vitepress dev apps/my-app' });
   });
 

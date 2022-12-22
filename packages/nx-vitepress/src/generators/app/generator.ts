@@ -66,20 +66,20 @@ export default async function (
     projectType: 'application',
     targets: {
       build: {
-        executor: '@nrwl/workspace:run-commands',
+        executor: 'nx:run-commands',
         outputs: ['{options.outputPath}'],
         options: {
           command: `vitepress build ${normalizedOptions.projectRoot}`,
         },
       },
       dev: {
-        executor: '@nrwl/workspace:run-commands',
+        executor: 'nx:run-commands',
         options: {
           command: `vitepress dev ${normalizedOptions.projectRoot}`,
         },
       },
       serve: {
-        executor: '@nrwl/workspace:run-commands',
+        executor: 'nx:run-commands',
         options: {
           command: `vitepress serve ${normalizedOptions.projectRoot}`,
         },
